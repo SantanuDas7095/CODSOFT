@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
+
 * {
   font-family: "Outfit";
   margin: 0;
@@ -6,6 +7,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
+/* ----- RESPOSIVE VERSION SETUPS -------- */
 
 /* Base style (Mobile first) */
 .container-padding {
@@ -37,13 +42,47 @@
   }
 }
 
-/* ---------------Anchor tag Changes-------------------- */
+
+
+
+
+/* ---------------FIXED THINGS---------- */
+
+#about,#skill{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-tag ,.skill-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.875rem;  
+  line-height: 2.25rem;    
+}
+
+.section-underline{
+  width: 15%;
+  height: 1.15px;
+  background-color: #374151;
+  border: none;
+}
+
+
+/*Anchor tag Changes */
 a {
   text-decoration: none;
   color: rgb(55 65 81);
 }
 
-/* ----------Navbar------------ */
+
+
+
+
+/* ---------- Navbar ------------ */
 
 .navbar {
   display: flex;
@@ -54,17 +93,20 @@ a {
   font-weight: 500; 
 }
 
-.logo_img{
-  width: 8rem;
-}
 .nav_logo{
   display: flex;
   align-items: center;
 }
 
-/* -----------------Navbar Items-------------- */
+.logo_img{
+  width: 8rem;
+}
 
-#navbarItems {
+
+
+/* -----------------NAVBAR OPTIONS-------------- */
+
+.navbar-option {
   display: flex;
   gap: 1.5rem;
   font-size: 1.15rem; 
@@ -72,12 +114,22 @@ a {
 
 }
 
-.navHide{
+.navbar-button{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
+
+@media (max-width: 768px) {
+  .navbar-button {
+    display: none;
+  }
+}
+
+
+
+/* ------------------------UNDER WORKING------------------------------ */
 
 .underline{
   /* display: none; */
@@ -87,11 +139,9 @@ a {
   border: none;
 }
 
-@media (max-width: 768px) {
-  .navHide {
-    display: none;
-  }
-}
+/* ---------------------------------------------------------------------- */
+
+
 
 .cvDownload{
   border: 1px solid currentColor;
@@ -103,23 +153,27 @@ a {
   margin-top: -0.5rem;
 }
 
+
+
 /* NAVBAR MENU */
 
-#navMenu {
+#navbar-menu {
   cursor: pointer;
   font-size: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  #navMenu {
+  #navbar-menu {
     display: none;
   }
 }
 
 
-/* -------MAIN------------ */
 
-.heroMain {
+
+/* ----------------- MAIN ------------------ */
+
+.hero {
   display: flex;
   flex-direction: column;
   border: 1px solid; 
@@ -128,25 +182,14 @@ a {
 
 /* Small screens and up (sm: 640px) (Horizontal Row) */
 @media (min-width: 640px) {
-  .heroMain {
+  .hero {
     flex-direction: row;
   }
 }
 
-.heroImg {
-  width: 100%;
-}
+/* ------------------- HERO AREA -------------- */
 
-@media (min-width: 640px){
-  .heroImg {
-    width: 50%;
-    height: 35rem;
-  }
-}
-
-/* -------------------HERO TEXT-------------- */
-
-.herotextArea{
+.hero-area{
   display: flex;
   width: 100%;
   align-items: center; 
@@ -157,18 +200,23 @@ a {
 
 /* Small screens and up (sm: 640px) */
 @media (min-width: 640px){
-  .herotextArea {
+  .hero-area {
     width: 50%;    
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-.heroText{
+
+/* ------------ HERO TEXT -------------- */
+
+.hero-text{
   color: #414141;
 }
 
-.heroline1{
+/* --- LINE 1 --- */
+
+.hero-line1{
   font-family: "Prata", serif;
   font-weight: 500;
   font-size: 1.75rem; 
@@ -179,19 +227,21 @@ a {
 
 /* Small screens and up (sm: 640px) */
 @media (min-width: 640px){
-  .heroline1 {
+  .hero-line1 {
     padding-top: 0.75rem;     
   }
 }
 
 /* Large screens and up (lg: 1024px) */
 @media (min-width: 1024px){
-  .heroline1 {
+  .hero-line1 {
     font-size: 2rem;         
   }
 }
 
-.heroline2 {
+/* ----- LINE 2 ----- */
+
+.hero-line2 {
   font-family: "Prata", serif;
   font-weight: 400;
   font-size: 1.45rem; 
@@ -202,19 +252,22 @@ a {
 
 /* Small screens and up (sm: 640px) */
 @media (min-width: 640px) {
-  .heroline2 { 
+  .hero-line2 { 
     padding-bottom: 0.75rem;
   }
 }
 
 /* Large screens and up (lg: 1024px) */
 @media (min-width: 1024px) {
-  .heroline2 {
+  .hero-line2 {
     font-size: 1.75rem;         
   }
 }
 
-.heroline3 {
+
+/* ---- LINE 3 ------- */
+
+.hero-line3 {
   font-weight: 450;
   font-size: 0.875rem;  
   line-height: 1.25rem; 
@@ -225,7 +278,7 @@ a {
 
 /* Medium screens and up (md: 640px) */
 @media (min-width: 640px) {
-  .heroline3 {
+  .hero-line3 {
     padding-top: 0;
     padding-bottom: 0.75rem;
     font-size: 1rem;  
@@ -234,31 +287,36 @@ a {
 }
 
 @media (min-width:1148px) {
-  .heroline3{
+  .hero-line3{
   padding-bottom: 0;
 }
 }
 
+
+/* ----------- HERO IMAGE ----------- */
+
+.hero-img {
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .hero-img {
+    width: 50%;
+    height: 35rem;
+  }
+}
+
+
+
+
+
 /* ------ ABOUT ME PART ---------- */
-
-#about{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.aboutMe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  font-size: 1.875rem;  
-  line-height: 2.25rem;    
-}
 
 .aboutMe p{
   color: #374151;
   font-weight: 500; 
 
 }
+
+/* ---------ABOUT ME DETAILS------- */
+
