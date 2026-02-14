@@ -15,7 +15,7 @@
 
 /* Base style (Mobile first) */
 .container-padding {
-  padding-left: 1rem; /* 16px */
+  padding-left: 1rem; 
   padding-right: 1rem;
 }
 
@@ -49,12 +49,12 @@
 
 /* ---------------FIXED THINGS---------- */
 
-#about,#skill{
+#about,#skill,#work,#contact{
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 
-.about-tag, .skill-tag{
+.about-tag, .skill-tag, .work-tag, .contact-tag{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +65,7 @@
   line-height: 2.25rem;    
 }
 
-.about-text, .skill-text{
+.about-text, .skill-text, .work-text, .contact-text{
   color: #414141;
   font-weight: 500; 
 
@@ -96,7 +96,11 @@ a {
   justify-content: space-between;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  font-weight: 500; 
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background-color: #ffffff;
 }
 
 .nav_logo{
@@ -361,10 +365,6 @@ a {
 
 /* ------------ ABOUT TEXT -------------- */
 
-.about-text{
-  color: #414141;
-}
-
 .about-line {
   font-weight: 450;
   font-size: 0.875rem;  
@@ -454,4 +454,340 @@ a {
 }
 
 
+
+
+/* SKILL CONTEXT AND WORK CONTEXT */
+
+.skill-context, .work-context, .contact-context  {
+  font-weight: 450;
+  font-size: 0.875rem;  
+  line-height: 1.25rem; 
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Medium screens and up (md: 640px) */
+@media (min-width: 640px) {
+  .skill-context, .work-context, .contact-context  {
+    font-size: 1rem;  
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width:1148px) {
+  .skill-context, .work-context, .contact-context{
+  padding-bottom: 0;
+}
+}
+
+
+/* -------- SKILL GRID -------- */
+
+.skill-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1rem;           
+  text-align: center;
+}
+
+/* Small screens and up (sm: 640px) */
+@media (min-width: 640px) {
+  .skill-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* sm:grid-cols-4 */
+  }
+}
+
+/* Medium screens (md: 768px) */
+@media (min-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Large screens (lg: 1024px) */
+@media (min-width: 1024px) {
+  .skill-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+
+/* --------------- SKILL AREA ---------------------- */
+
+.skill-area {
+  /* Base Shadow */
+  box-shadow: 0 4px 6px -1px rgba(4, 12, 22, 0.1), 
+              0 2px 4px -2px rgba(4, 12, 22, 0.1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #F0EAD6;
+}
+
+/* Hover state */
+.skill-area:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- SKILL LINE ------------ */
+
+.skill-line{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+/* -----------WORK GRID------ */
+
+.work-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1rem;           
+  text-align: center;
+}
+
+/* Medium screens to large screen (md: 768px) */
+@media (min-width: 768px) {
+  .work-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+
+
+/* ----------------WORK CARD--------- */
+
+
+.grid-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.375rem; 
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 10px 15px -3px rgba(4, 12, 22, 0.4), 
+              0 4px 6px -2px rgba(4, 12, 22, 0.2);
+  width: 100%;
+  min-height: 18.75rem;;
+}
+
+.hover-overlay {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  background: #F0EAD6;
+}
+
+
+.grid-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+/*-------- PROJECT DETAILS ------------  */
+
+.project-title {
+  padding-top: 1rem;
+  font-size: 1.5rem;  
+  line-height: 1.75rem;   
+  color: #212121;
+  font-weight: 500; 
+}
+
+.project-description {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  color: #414141;
+}
+
+
+.project-underline{
+  margin-bottom: 1rem;
+  width: 50%;
+  height: 1.25px;
+  background-color: #414141;
+  border: none;
+}
+
+
+
+/* ----- BUTTON CONFIGURATION ------ */
+
+.button-container {
+  padding-top:1.5rem;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem; 
+  padding: 0.75rem 1rem; 
+  margin: 0.5rem; 
+  background-color: #ffffff;
+  color: #212121; 
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,transform 0.3s ease-in-out;
+}
+
+.btn:hover{
+  background-color: #212121;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+/* --------- CONTACT ----------- */
+
+
+.social-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; 
+}
+
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 37.5rem;
+}
+
+/*First and Last Name */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+.form-group label {
+    font-size: 1rem;
+    color: #414141;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],input[type="email"],textarea {
+    padding: 0.75rem;
+    border: 1.5px solid #414141;
+    background-color: transparent;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,textarea:focus {
+    border-color: #000000;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.send-btn {
+    background-color: #212121;
+    color: #ffffff;
+    padding: 12px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) ,box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.send-btn:hover {
+    background-color: wheat;
+    color: #212121;
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px -1px rgba(4, 12, 22, 0.1), 
+              0 2px 4px -2px rgba(4, 12, 22, 0.1);
+    opacity: 0.9;
+}
+
+/* Small screens (sm: 640px) */
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ------- CONTACT DETAILS------- */
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; 
+}
+
+
+
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #212121;
+}
+
+
+.icon-main {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.email-link {
+    color: #414141;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+
+.contact-icons{
+  display: flex;
+  gap: 1.5rem; 
+  flex-direction: row;
+}
+
+
+
+.social-icon {
+  color: #212121;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: #007bff; 
+}
 
