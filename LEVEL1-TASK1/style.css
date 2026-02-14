@@ -6,6 +6,7 @@
   border: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior:smooth;
 }
 
 
@@ -53,7 +54,7 @@
   margin-bottom: 2.5rem;
 }
 
-.about-tag ,.skill-tag {
+.about-tag, .skill-tag{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,10 +65,16 @@
   line-height: 2.25rem;    
 }
 
+.about-text, .skill-text{
+  color: #414141;
+  font-weight: 500; 
+
+}
+
 .section-underline{
   width: 15%;
   height: 1.15px;
-  background-color: #374151;
+  background-color: #414141;
   border: none;
 }
 
@@ -75,9 +82,8 @@
 /*Anchor tag Changes */
 a {
   text-decoration: none;
-  color: rgb(55 65 81);
+  color: #414141;
 }
-
 
 
 
@@ -132,11 +138,16 @@ a {
 /* ------------------------UNDER WORKING------------------------------ */
 
 .underline{
-  /* display: none; */
+  visibility: hidden;
   width: 50%;
   height: 1.15px;
-  background-color: #374151;
+  background-color: #414141;
   border: none;
+  transition: visibility 0.2s ease-in-out;
+}
+
+.navbar-button:hover .underline {
+  visibility: visible;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -151,6 +162,13 @@ a {
   padding-bottom: 0.5rem;
   border-radius: 9999px;
   margin-top: -0.5rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,transform 0.3s ease-in-out;
+}
+
+.cvDownload:hover{
+  background-color: #212121;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 
@@ -172,6 +190,8 @@ a {
 
 
 /* ----------------- MAIN ------------------ */
+
+/* ----------- HERO --------- */
 
 .hero {
   display: flex;
@@ -214,8 +234,7 @@ a {
   color: #414141;
 }
 
-/* --- LINE 1 --- */
-
+/* ----------- LINE 1 ------------- */
 .hero-line1{
   font-family: "Prata", serif;
   font-weight: 500;
@@ -239,8 +258,7 @@ a {
   }
 }
 
-/* ----- LINE 2 ----- */
-
+/* --------------- LINE 2 ------------------ */
 .hero-line2 {
   font-family: "Prata", serif;
   font-weight: 400;
@@ -265,8 +283,7 @@ a {
 }
 
 
-/* ---- LINE 3 ------- */
-
+/* -------------------- LINE 3 -------------------- */
 .hero-line3 {
   font-weight: 450;
   font-size: 0.875rem;  
@@ -292,7 +309,6 @@ a {
 }
 }
 
-
 /* ----------- HERO IMAGE ----------- */
 
 .hero-img {
@@ -309,14 +325,133 @@ a {
 
 
 
+/* ------ ABOUT ---------- */
 
-/* ------ ABOUT ME PART ---------- */
-
-.aboutMe p{
-  color: #374151;
-  font-weight: 500; 
-
+.about-section {
+  display: flex;
+  flex-direction: column;
 }
 
-/* ---------ABOUT ME DETAILS------- */
+/* Small screens and up (sm: 640px) (Horizontal Row) */
+@media (min-width: 640px) {
+  .about-section {
+    flex-direction: row;
+  }
+}
+
+/* ------------ABOUT AREA ------------ */
+
+.about-area{
+  display: flex;
+  width: 100%;
+  align-items: center; 
+  justify-content: center; 
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Small screens and up (sm: 640px) */
+@media (min-width: 640px){
+  .about-area {
+    width: 50%;    
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* ------------ ABOUT TEXT -------------- */
+
+.about-text{
+  color: #414141;
+}
+
+.about-line {
+  font-weight: 450;
+  font-size: 0.875rem;  
+  line-height: 1.25rem; 
+  padding-top: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+}
+
+/* Medium screens and up (md: 640px) */
+@media (min-width: 640px) {
+  .about-line {
+    padding-top: 0;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;  
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width:1148px) {
+  .about-line{
+  padding-bottom: 0;
+}
+}
+
+/* -------- ABOUT IMAGE -------- */
+
+.about-img {
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .about-img {
+    width: 40%;
+  }
+}
+
+
+
+/* ---------EDUCATION------- */
+
+.education-tag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;  
+  line-height: 2.25rem;  
+}
+
+.education-text{
+  color: #212121;
+  font-weight: 500;
+}
+
+
+/* ------ EDUCATION LINES --------- */
+
+.education-line {
+  font-weight: 450;
+  font-size: 0.875rem;  
+  line-height: 1.25rem; 
+  padding-top: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  list-style-type:disc;
+  list-style-position: inside;
+}
+
+/* Medium screens and up (md: 640px) */
+@media (min-width: 640px) {
+  .education-line {
+    padding-top: 0;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;  
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width:1148px) {
+  .education-line{
+  padding-bottom: 0;
+}
+}
+
+
 
